@@ -13,6 +13,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  FlutterBle flutterBlue = FlutterBle.instance;
+  
   //remove this part with the data received from esp
   List<Disturbance> placeholder = [
     Disturbance(level: 'low', time: "5:30 am"),
