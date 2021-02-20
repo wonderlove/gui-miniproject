@@ -72,6 +72,76 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
+          SizedBox(height: 20),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(8.0, 3, 8, 3),
+                child: Text(
+                    "GRAPH",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                    )),
+              ),
+              decoration: const BoxDecoration(
+                border: Border(
+                  top: BorderSide(width: 1.0, color: Colors.white),
+                  left: BorderSide(width: 1.0, color: Colors.white),
+                  right: BorderSide(width: 1.0, color: Colors.white),
+                  bottom: BorderSide(width: 1.0, color: Colors.white),
+                ),
+              ),
+            ),
+          ),
+          Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white),
+              ),
+              width: 502,
+              height: 150,
+              child: Text(
+                  'Graph stuff here, Filler',
+                  style: TextStyle(
+                    fontSize: 20,
+                    letterSpacing: 1.5,
+                    color: Colors.white,
+                  ))
+          ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18)
+                  ),
+                  child: Text(
+                    'CONNECT',
+                    style: TextStyle(
+                        fontSize: 16
+                    ),),
+                  onPressed: () {
+                    print('FILLER');
+                  }
+              ),
+              SizedBox(width: 15),
+              RaisedButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18)
+                  ),
+                  child: Text(
+                    'DISCONNECT',
+                    style: TextStyle(
+                        fontSize: 16
+                    ),
+                  ),
+                  onPressed: () {
+                    print('FILLER');
+                  }
+              )
+            ],
+          ),
         ],
       ),
     );
