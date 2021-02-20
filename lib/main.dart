@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ble/flutter_ble.dart';
+import 'package:flutter_blue/flutter_blue.dart';
 
 void main() => runApp(MaterialApp(
   home: Home()
@@ -13,8 +13,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  FlutterBle flutterBlue = FlutterBle.instance;
-  
+
   //remove this part with the data received from esp
   List<Disturbance> placeholder = [
     Disturbance(level: 'low', time: "5:30 am"),
@@ -23,6 +22,18 @@ class _HomeState extends State<Home> {
     Disturbance(level: 'medium', time: "5:34 am"),
     Disturbance(level: 'medium', time: "5:34 am"),
   ];
+
+
+  FlutterBlue flutterBlue = FlutterBlue.instance;
+  BluetoothDevice targetDevice;
+  BluetoothCharacteristic targetCharacteristic;
+
+  StreamSubscription<ScanResult> scanSubScription;
+  Stream<List<int>> stream;
+
+  bool isConnected = false;
+  
+
 
   @override
   Widget build(BuildContext context) {
