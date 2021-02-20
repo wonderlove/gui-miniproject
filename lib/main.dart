@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
                   ))
           ),
           Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               RaisedButton(
                   shape: RoundedRectangleBorder(
