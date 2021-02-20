@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import 'card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ble/flutter_ble.dart';
 
@@ -13,6 +13,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<Disturbance> placeholder = [
+    Disturbance(level: 'low', time: "5:30 am"),
+    Disturbance(level: 'medium', time: "5:34 am"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,31 +56,14 @@ class _HomeState extends State<Home> {
             height: 292.0,
             width: 502.0,
             child: Column(
-              children: <Widget>[
-                Text(
-                  "placeholder ",
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    color: Colors.grey[600],
-                  ),
-                ),
-                SizedBox(height: 6.0),
-                Text(
-                  "placeholder",
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-              // children: quotes.map((quote) => QuoteCard(quote: quote)).toList(),
+              children: placeholder.map((disturbance) => ListCard(disturbance: disturbance)).toList(),
             ),
             decoration: const BoxDecoration(
               border: Border(
-                top: BorderSide(width: 1.0, color: Colors.white),
+                top: BorderSide(width: 2.0, color: Colors.white),
                 left: BorderSide(width: 1.0, color: Colors.white),
                 right: BorderSide(width: 1.0, color: Colors.white),
-                bottom: BorderSide(width: 1.0, color: Colors.white),
+                bottom: BorderSide(width: 2.0, color: Colors.white),
               ),
             ),
           ),
